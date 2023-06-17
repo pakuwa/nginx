@@ -1,0 +1,53 @@
+name: Build Nginx Image
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  SECRET_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  nginx-125:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions
+        with:
+          version: '1.25.1'
+  nginx-124:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions
+        with:
+          version: '1.24.0'
+  nginx-123:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions
+        with:
+          version: '1.23.4'
+  nginx-122:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions
+        with:
+          version: '1.22.1'
+  nginx-121:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions
+        with:
+          version: '1.21.6'
+  nginx-120:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions
+        with:
+          version: '1.20.2'
+  nginx-119:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions
+        with:
+          version: '1.19.1'
